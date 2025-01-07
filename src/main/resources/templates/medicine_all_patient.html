@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>Medicine list</title>
+</head>
+<body
+	style="min-height: 100vh; background-image: linear-gradient(whitesmoke, skyblue); background-repeat: no-repeat; background-size: contain;">
+	<!-- To display all the medicine for patient -->
+	<div class="container-fluid bg-info p-3 mb-3 h5 text-light">Patient
+		Management Application</div>
+	<p class="text-center h5">Medicine's List</p>
+	<div class="container">
+				<a th:href="@{/dashboard}" alt="home page" type="button" class="btn btn-primary mb-4 btn-hover">Home page</a>
+	
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Medicine Name</th>
+					<th>Manufacturing Date</th>
+					<th>Expired Date</th>
+					<th>Medicine For</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="medicine:${medicines}">
+					<td th:text="${medicine.id}"></td>
+					<td th:text="${medicine.medicineName}"></td>
+					<td th:text="${medicine.mfgDate}"></td>
+					<td th:text="${medicine.expireDate}"></td>
+					<td th:text="${medicine.medicineFor}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

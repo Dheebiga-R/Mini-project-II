@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>Doctor's page</title>
+</head>
+
+<body
+	style="background-image: url(images/logout.jpeg); background-repeat: no-repeat; background-size: cover;">
+   <!-- Doctor's dashboard -->
+	<div
+		class="container-fluid border bg-info text-white p-1 d-flex flex-column flex-md-row justify-content-between align-items-center">
+		<h5 class="mb-2 mb-md-0 ">Patient Management Application</h5>
+		<ul class="nav nav-pills mb-2 mb-md-0">
+			<li class="nav-item"><a th:href="@{/doctorScreen/doctorlist}"
+				class="nav-link h6">Add Doctor</a></li>
+			<li class="nav-item"><a th:href="@{/doctorScreen/schedulelist}"
+				class="nav-link h6">Schedule appointment</a></li>
+			<li class="nav-item"><a th:href="@{/doctorScreen/medicinelist}"
+				class="nav-link h6">Medicines</a>
+		</ul>
+		<a type="button" th:href="@{/logout}" class="btn btn-primary ">Logout</a>
+	</div>
+
+	<div class="card-group d-flex flex-md-row float-end w-30 m-5">
+		<div class="card mb-3 ">
+			<img src="images/first.jpg" class="card-img-top img-thumbnail"
+				alt="management-image">
+			<div class="card-body">
+				<h5 class="card-title">Welcome</h5>
+				<p class="card-text">
+					<span th:text="*{userDetails}"> Doctor</span>
+				</p>
+				<p class="card-text">
+					<small class="text-muted">It's our responsibility to take
+						care of our patients</small>
+				</p>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
